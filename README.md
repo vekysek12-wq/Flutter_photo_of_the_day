@@ -1,17 +1,41 @@
-# photo_of_the_day_stash
+# Фото дня
 
-A new Flutter project.
+Flutter-приложение, которое загружает случайные фотографии собак и пейзажей из интернета через API с использованием `Future`, `async/await`.
 
-## Getting Started
+## Автор
 
-This project is a starting point for a Flutter application.
+- Имя: Сташенко Дмитрий
+- Группа: ИСП-243
+## Стек и версии
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter 3.x
+- Dart 3.x
+- Платформа: Web (Chrome)
+- Пакет: `http`
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Скриншот
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Скриншот приложения](img/step2_Stash.png)
+
+## Запуск
+
+1. `git clone https://github.com/vekysek12-wq/Flutter_photo_of_the_day.git`
+2. `cd photo_of_the_day_stash`
+3. `flutter pub get`
+4. `flutter run -d chrome`
+
+## Что изучили
+
+- `Future<T>` — объект-обещание вернуть значение в будущем
+- `async`/`await` — асинхронный код в синхронном стиле
+- `try/catch` — обработка ошибок в асинхронном коде
+- `http.get()` + `jsonDecode()` — сетевые запросы и парсинг JSON
+- `setState()` для управления состояниями загрузки/ошибки/успеха
+
+## Ответы на вопросы
+
+1. **Что такое `Future<T>`?** Объект, который обещает вернуть значение типа `T` в будущем. Сейчас результата нет, но он появится позже.
+2. **Что делает `await`?** Приостанавливает текущую функцию до завершения `Future`, не блокируя весь поток — другие части программы продолжают работать.
+3. **Зачем `setState()` дважды?** В начале — показать загрузку и сбросить старый результат; в конце — скрыть загрузку после получения данных.
+4. **Почему `_fetchPhoto` без скобок?** Передаётся ссылка на функцию, а не результат её вызова. Со скобками функция выполнилась бы сразу при построении виджета.
+5. **`Image.network()` vs `Image.asset()`?** `Image.network()` загружает картинку по URL из сети; `Image.asset()` — из локальных ассетов проекта.

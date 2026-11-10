@@ -35,8 +35,7 @@ class _PhotoPageState extends State<PhotoPage> {
         _imageUrl = data['message'];
       } else {
         final random = DateTime.now().millisecondsSinceEpoch;
-        _imageUrl =
-            'https://picsum.photos/seed/$random/800/800';
+        _imageUrl = 'https://picsum.photos/seed/$random/800/800';
       }
     } catch (e) {
       _errorMessage =

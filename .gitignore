@@ -53,3 +53,5 @@ linux/
 macos/
 windows/
 test/
+.dart_tool/
+build/
